@@ -5,5 +5,6 @@ namespace TrabalhoPooBanco.Domain.Interfaces;
 
 public interface IClienteRepository : IBaseRepository<Cliente> 
 {
-  
+  IEnumerable<Cliente> Listar();
+       
 }
