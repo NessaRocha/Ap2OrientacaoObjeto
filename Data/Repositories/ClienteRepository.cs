@@ -9,6 +9,11 @@ namespace TrabalhoPooBanco.Data.Repositories
    public class ClienteRepository : IClienteRepository
     {
         private readonly DataContext context;
+
+        public ClienteRepository()
+        {
+        }
+
         public ClienteRepository(DataContext context)
         {
             this.context = context;
@@ -45,6 +50,14 @@ namespace TrabalhoPooBanco.Data.Repositories
             context.SaveChanges();
         }
 
-        
+        internal IEnumerable<object> Listar()
+        {
+            throw new NotImplementedException();
+        }
+
+        internal object ObterClientePeloNumeroConta(string numeroConta)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

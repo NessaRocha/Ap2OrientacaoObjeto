@@ -1,169 +1,108 @@
 ﻿using static System.Console;
 using TrabalhoPooBanco.Domain.Entities;
-using TrabalhoPooBanco.Domain.Interfaces;
-using TrabalhoPooBanco.Data;
-using Data.Context;
 using TrabalhoPooBanco.Data.Repositories;
 
+class Program
+{
+    static void Main()
+    {
+        var clienteRepository = new ClienteRepository();
+        var transacaoRepository = new TransacaoRepository();
 
+        do
+        {
+            WriteLine("--- Escolha a operação que deseja realizar");
+            WriteLine("------- 1 - Criar uma conta");
+            WriteLine("------- 2 - Listar clientes");
+            WriteLine("------- 3 - Realizar uma transferência");
+            WriteLine("------- 4 - Realizar um saque");
+            WriteLine("------- 5 - Realizar um depósito");
+            WriteLine("------- 6 - Sair");
 
-    var db = new DataContext();
-    var clienteRepository = new ClienteRepository(db);
-    var transacaoRepository = new TransacaoRepository(db);
-    
-    
-    //private static void Main(string[] args)
-    //{
-//IClienteRepository repository = new ClienteRepository();
-       // do
-       // {
-        //    WriteLine("--- Escolha a operação que deseja realizar");
-        //    WriteLine("------- 1 - Criar uma conta");
-        //    WriteLine("------- 2 - Listar clientes");
-        //    WriteLine("------- 3 - Realizar uma transferência");
-        //    WriteLine("------- 4 - Realizar um saque");
-        //    WriteLine("------- 5 - Realizar um depósito");
-        //    WriteLine("------- 6 - Sair");
-///
-         //   var input = ReadLine();
-         //   if (!int.TryParse(input, out var escolha))
-           // {
-            //    WriteLine("Você não informou uma opção correta!");
-            //    continue;
-            //}
+            var input = ReadLine();
+            if (!int.TryParse(input, out var escolha))
+            {
+                WriteLine("Você não informou uma opção correta!");
+                continue;
+            }
 
-           // if (escolha == 1)
-           // {
-                //Criar conta
-              //  WriteLine("Certo, vamos criar a sua conta!!");
-             //   WriteLine("Informe o seu nome:");
-             //   var nome = ReadLine();
+            if (escolha == 1)
+            {
+                // Criar conta
+                WriteLine("Certo, vamos criar a sua conta!!");
+                WriteLine("Informe o seu nome:");
+                var nome = ReadLine();
 
-             //   WriteLine("Informe o seus cpf:");
-             //   var cpf = ReadLine();
+                WriteLine("Informe o seu CPF:");
+                var cpf = ReadLine();
 
-             //   WriteLine("Informe o seu sexo:");
-             //   WriteLine("-- 1 para masculino");
-             //   WriteLine("-- 2 para feminino");
-             //   var sexoInput = ReadLine();
+                WriteLine("Informe o seu sexo:");
+                WriteLine("-- 1 para masculino");
+                WriteLine("-- 2 para feminino");
+                var sexoInput = ReadLine();
 
-             //   var conta = new ContaCorrente(Random.Shared.NextInt64(2000).ToString(), 0);
-             //   var cliente = new Cliente( nome, cpf, Enum.Parse<ESexo>(sexoInput), conta);
+                var conta = new ContaCorrente(Random.Shared.NextInt64(2000).ToString(), 0);
+                var cliente = new Cliente(nome, cpf, Enum.Parse<ESexo>(sexoInput), conta);
 
-                // camada de encapsulamento controla o banco
-                //var repository = new IClienteRepository();
-                //repository.Salvar(cliente);
+                clienteRepository.Salvar(cliente);
 
-              //  cliente.MostrarDados();
-            //}
-            //else if (escolha == 2)
-           // {
-              //  var repository = new IClienteRepository();
-               // var clientes = repository.Listar();
-               // foreach (var cliente in clientes)
-               // {
-                //    cliente.MostrarDados();
-                //    WriteLine();
-                //}
-           // }
-            //else if (escolha == 3)
-            //{
-             //   WriteLine("Informe o número da conta de origem:");
-              //  var numeroContaOrigem = ReadLine();
-              //  var repository = new IClienteRepository();
-              //  var clienteOrigem = repository.ObterClientePeloNumeroConta(numeroContaOrigem);
-              //  if (clienteOrigem == null)
-              // {
-               //     WriteLine("Conta de origem não existente!");
-               //     continue;
-               // }
+                cliente.MostrarDados();
+            }
+            else if (escolha == 2)
+            {
+                var clientes = clienteRepository.Listar();
+                foreach (var cliente in clientes)
+                {
+                    cliente.MostrarDados();
+                    WriteLine();
+                }
+            }
+            else if (escolha == 3)
+            {
+                // Realizar transferência
+            }
+            else if (escolha == 4)
+            {
+                // Realizar saque
+            }
+            else if (escolha == 5)
+            {
+                WriteLine("Informe o número da conta que deseja fazer o depósito:");
+                var numeroConta = ReadLine();
 
-               // WriteLine("Informe o número da conta de destino:");
-               // var numeroContaDestino = ReadLine();
-               // var clienteDestino = repository.ObterClientePeloNumeroConta(numeroContaDestino);
-               // if (clienteDestino == null)
-               // {
-               //     WriteLine("Conta de destino não existente!");
-               //     continue;
-               // }
+                var cliente = clienteRepository.ObterClientePeloNumeroConta(numeroConta);
+                if (cliente == null)
+                {
+                    WriteLine("Conta não existente!");
+                    continue;
+                }
 
-                //WriteLine("Informe o valor que deseja transferir:");
-               // var valorInput = ReadLine();
-               // Validar se realmente é um decimal
-               // var valor = decimal.Parse(valorInput);
-
-                //var transferencia = new Transferencia(clienteOrigem, clienteDestino, valor);
-                //var resultado = transferencia.Executar();
-
-                //var transacaoRepository = new ITransacaoRepository();
-                //transacaoRepository.Salvar(transferencia);
-
-               // WriteLine(resultado.Mensagem);
-
-            //}
-           // else if (escolha == 4)
-            //{
-              //  WriteLine("Informe o número da conta que deseja fazer saque:");
-              //  var numeroConta = ReadLine();
-
-                //var repository = new IClienteRepository();
-               // var cliente = repository.ObterClientePeloNumeroConta(numeroConta);
-               // if (cliente == null)
-                //{
-                //    WriteLine("Conta não existente!");
-                  //  continue;
-                //}
-
-               /// WriteLine("Informe o valor que deseja sacar da conta:");
-               // var valorInput = ReadLine();
-                //Validar se realmente é um decimal
-                //var valor = decimal.Parse(valorInput);
-
-                //var saque = new Saque(cliente, valor);
-               // var resultado = saque.Executar();
-
-                //var transacaoRepository = new ITransacaoRepository();
-                //transacaoRepository.Salvar(saque);
-
-                //WriteLine(resultado.Mensagem);
-            //}
-            //else if (escolha == 5)
-            //{
-
-              //  WriteLine("Informe o número da conta que deseja fazer depósito:");
-                //var numeroConta = ReadLine();
-
-                //var repository = new IClienteRepository();
-                //var cliente = repository.ObterClientePeloNumeroConta(numeroConta);
-                //if (cliente == null)
-               // {
-                 //   WriteLine("Conta não existente!");
-                   // continue;
-                //}
-
-               // WriteLine("Informe o valor que deseja depositar na conta:");
-                // var valorInput = ReadLine();
+                WriteLine("Informe o valor que deseja depositar na conta:");
+                var valorInput = ReadLine();
                 // Validar se realmente é um decimal
-                // var valor = decimal.Parse(valorInput);
-                // var deposito = new Deposito(cliente, valor);
-                // var resultado = deposito.Executar();
+                if (!decimal.TryParse(valorInput, out var valor))
+                {
+                    WriteLine("Valor inválido!");
+                    continue;
+                }
 
-                // var transacaoRepository = new ITransacaoRepository();
-                // transacaoRepository.Salvar(deposito);
+                var deposito = new Deposito(cliente, valor);
+                var resultado = deposito.Executar();
 
-                // WriteLine(resultado.Mensagem);
-            //}
-            // else if (escolha == 6)
-            // {
-               //  WriteLine("Obrigado por utilizar nosso sistema! Até mais!");
-                // return;
-            // }
-            // else
-            // {
-              //  WriteLine("Você não informou uma opção correta!");
-                //continue;
-            //}
+                transacaoRepository.Salvar(deposito);
 
+                WriteLine(resultado.Mensagem);
+            }
+            else if (escolha == 6)
+            {
+                break;
+            }
+            else
+            {
+                WriteLine("Você não informou uma opção correta!");
+                continue;
+            }
 
-        //} while (true);
-    //}
+        } while (true);
+    }
+}

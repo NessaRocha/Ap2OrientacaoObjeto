@@ -3,12 +3,16 @@ using Data.Context;
 using TrabalhoPooBanco.Domain.Entities;
 using TrabalhoPooBanco.Domain.Interfaces;
 
-
 namespace TrabalhoPooBanco.Data.Repositories
 {
    public class TransacaoRepository : ITransacaoRepository 
     {
         private readonly DataContext context;
+
+        public TransacaoRepository()
+        {
+        }
+
         public TransacaoRepository(DataContext context)
         {
             this.context = context;
@@ -46,6 +50,9 @@ namespace TrabalhoPooBanco.Data.Repositories
             context.SaveChanges();
         }
 
-        
+        internal void Salvar(Deposito deposito)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -10,12 +10,7 @@ public class Transferencia : Transacao
     {
       
     }
-     public void DefinirClientes(Cliente de, Cliente para)
-        {
-            De = de;
-            Para = para;
-        }
-
+    
     public override Resultado Executar()
     {
         return De.Conta.Transferir(Valor, Para.Conta);

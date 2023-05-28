@@ -7,7 +7,7 @@ namespace TrabalhoPooBanco.Domain.Entities
         public ContaCorrente ContaCorrente { get; set; }
 
         // Remova o parâmetro 'Cliente' do construtor
-        public Deposito(decimal valor) : base(valor)
+        public Deposito(object cliente, decimal valor) : base(valor)
         {
         }
 
