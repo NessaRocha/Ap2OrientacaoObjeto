@@ -38,9 +38,9 @@ namespace TrabalhoPooBanco.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public void Save(Cliente entity)
+        public void Save(Cliente cliente)
         {
-            context.Add(entity);
+            context.Add(cliente);
             context.SaveChanges();
         }
 
@@ -50,12 +50,17 @@ namespace TrabalhoPooBanco.Data.Repositories
             context.SaveChanges();
         }
 
-        internal IEnumerable<object> Listar()
+        internal IEnumerable<object>Listar()
         {
             throw new NotImplementedException();
         }
 
         internal object ObterClientePeloNumeroConta(string numeroConta)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void Salvar(Cliente cliente)
         {
             throw new NotImplementedException();
         }

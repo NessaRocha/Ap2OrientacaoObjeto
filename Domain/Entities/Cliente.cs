@@ -7,7 +7,7 @@ namespace TrabalhoPooBanco.Domain.Entities
         public Conta Conta { get; private set; }
         
 
-        public Cliente(int id , string nome, string CPF, ESexo sexo) :
+        public Cliente(object id1, int id , string nome, string CPF, ESexo sexo) :
             base(id, nome, CPF, sexo)
         {
         
