@@ -51,15 +51,9 @@ namespace TrabalhoPooBanco.Data.Repositories
             return context.Clientes.Include(x => x.CPF);
         }
 
-        internal object ObterClientePeloNumeroConta(string numeroConta)
-        {
-            throw new NotImplementedException();
-        }
+        
 
-        internal void Salvar(Cliente cliente)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         IEnumerable<Cliente> IClienteRepository.Listar()
         {

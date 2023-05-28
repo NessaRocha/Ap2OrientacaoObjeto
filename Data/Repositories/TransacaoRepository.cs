@@ -34,7 +34,7 @@ namespace TrabalhoPooBanco.Data.Repositories
 
         public Transacao GetById(int entityId)
         {
-            return context.Transacoes.Include(x=>x.Valor).SingleOrDefault(x=>x.Id
+            return context.Transacoes.Include(x=>x.Valor).SingleOrDefault(x=>x.IdTransacao
             == entityId);
         }
 
@@ -50,7 +50,7 @@ namespace TrabalhoPooBanco.Data.Repositories
             context.SaveChanges();
         }
 
-        internal void Salvar(Deposito deposito)
+        internal void Save(Deposito deposito)
         {
             throw new NotImplementedException();
         }

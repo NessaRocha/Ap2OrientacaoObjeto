@@ -57,43 +57,46 @@ namespace Data.Context
                     // Mapeamento das propriedades
                     entity.Property(c => c.Id).IsRequired();
                 });
-                modelBuilder.Entity<Deposito>()
-            .Property(d => d.IdDeposito)
-            .HasColumnName("id"); // Especifica o nome da coluna do banco de dados
-
-                // Outras configurações do modelo...
-
-                base.OnModelCreating(modelBuilder);
 
 
+
+                modelBuilder.Entity<Transacao>(entity =>
                 {
-                    modelBuilder.Entity<Saque>();
-                    modelBuilder.Entity<Deposito>();
-                    modelBuilder.Entity<Transferencia>();
-                }
+                    entity.ToTable("Transacoes");
+                    entity.HasKey(t => t.IdTransacao);
 
+                });
+
+
+                modelBuilder.Entity<Saque>()
+                    .HasBaseType<Transacao>();
+
+
+                modelBuilder.Entity<Deposito>()
+                    .HasBaseType<Transacao>();
+
+
+                modelBuilder.Entity<Transferencia>()
+                    .HasBaseType<Transacao>();
                 modelBuilder.Entity<Resultado>(entity =>
                 {
                     entity.ToTable("Resultados");
                     entity.HasKey(r => r.Id);
 
-                    // Configurações adicionais da entidade Resultado, se houver.
+
                 });
 
-                modelBuilder.Entity<Transacao>(entity =>
-                {
-                    entity.ToTable("Transacoes");
-                    entity.HasKey(t => t.Id);
 
-                    // Configurações adicionais da entidade Transacao, se houver.
-                });
+
 
 
             });
+            base.OnModelCreating(modelBuilder);
         }
-
     }
+
 }
+
 
 
 
