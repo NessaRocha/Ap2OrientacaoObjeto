@@ -14,7 +14,7 @@ namespace TrabalhoPooBanco.Migrations
                 name: "Clientes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    IdClientes = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Nome = table.Column<string>(type: "TEXT", nullable: true),
                     CPF = table.Column<string>(type: "TEXT", maxLength: 11, nullable: false),
@@ -22,28 +22,28 @@ namespace TrabalhoPooBanco.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Clientes", x => x.Id);
+                    table.PrimaryKey("PK_Clientes", x => x.IdClientes);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Resultados",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    IdResultados = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Status = table.Column<bool>(type: "INTEGER", nullable: false),
                     Mensagem = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Resultados", x => x.Id);
+                    table.PrimaryKey("PK_Resultados", x => x.IdResultados);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Contas",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    IdContas = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Numero = table.Column<string>(type: "TEXT", nullable: true),
                     Saldo = table.Column<decimal>(type: "TEXT", nullable: false),
@@ -52,7 +52,7 @@ namespace TrabalhoPooBanco.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Contas", x => x.Id);
+                    table.PrimaryKey("PK_Contas", x => x.IdContas);
                     table.ForeignKey(
                         name: "FK_Contas_Clientes_ClienteId",
                         column: x => x.ClienteId,
@@ -65,7 +65,7 @@ namespace TrabalhoPooBanco.Migrations
                 name: "Transacoes",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    IdTransacoes = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Valor = table.Column<decimal>(type: "TEXT", nullable: false),
                     Discriminator = table.Column<string>(type: "TEXT", nullable: false),
@@ -80,7 +80,7 @@ namespace TrabalhoPooBanco.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Transacoes", x => x.Id);
+                    table.PrimaryKey("PK_Transacoes", x => x.IdTransacoes);
                     table.ForeignKey(
                         name: "FK_Transacoes_Clientes_ClienteId",
                         column: x => x.ClienteId,
