@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6Km9VSXKHFrMBfzFLdxKhg69a5584X7NCrSEbRh0RMuEborV241m3zJ7BvJ4Hs7UCmcNYfa5o126Q0B8sO6dWA==",
+  "dgSpecHash": "xgAtATDT4lohEvAjxEJV/FXErROw+9D2/LQCsHOHDLGwtpR0AryuMfCRz2ycH9dl6duEBll9pNt0kO+hN7wqiw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MeuAppBanco\\TrabalhoPooBanco.csproj",
+  "projectFilePath": "C:\\Users\\Ap2OrientacaoObjeto\\TrabalhoPooBanco.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nessa\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\nessa\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.5\\microsoft.data.sqlite.core.7.0.5.nupkg.sha512",
