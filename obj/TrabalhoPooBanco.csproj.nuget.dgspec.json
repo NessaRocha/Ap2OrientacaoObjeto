@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ap2\\TrabalhoPooBanco\\TrabalhoPooBanco.csproj": {}
+    "C:\\Users\\MeuAppBanco\\TrabalhoPooBanco.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ap2\\TrabalhoPooBanco\\TrabalhoPooBanco.csproj": {
+    "C:\\Users\\MeuAppBanco\\TrabalhoPooBanco.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ap2\\TrabalhoPooBanco\\TrabalhoPooBanco.csproj",
+        "projectUniqueName": "C:\\Users\\MeuAppBanco\\TrabalhoPooBanco.csproj",
         "projectName": "TrabalhoPooBanco",
-        "projectPath": "C:\\Users\\ap2\\TrabalhoPooBanco\\TrabalhoPooBanco.csproj",
+        "projectPath": "C:\\Users\\MeuAppBanco\\TrabalhoPooBanco.csproj",
         "packagesPath": "C:\\Users\\nessa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ap2\\TrabalhoPooBanco\\obj\\",
+        "outputPath": "C:\\Users\\MeuAppBanco\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\nessa\\AppData\\Roaming\\NuGet\\NuGet.Config"
