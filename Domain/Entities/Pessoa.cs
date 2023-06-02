@@ -2,8 +2,8 @@ namespace TrabalhoPooBanco.Domain.Entities;
 
 public class Pessoa
 {
-    public int Id { get; set;}
-    public string Nome { get; protected set; }
+    public int Id { get; set; }
+    public string Nome { get; set; }
     public string CPF { get; protected set; }
     public ESexo Sexo { get; protected set; }
 

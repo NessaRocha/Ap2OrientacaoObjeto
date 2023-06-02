@@ -4,7 +4,7 @@ namespace TrabalhoPooBanco.Domain.Entities
 {
     public class Cliente : Pessoa
     {
-        public Conta Conta { get; private set; }
+        public Conta Conta { get; set; }
 
 
         public Cliente(int id, string nome, string CPF, ESexo sexo) :
