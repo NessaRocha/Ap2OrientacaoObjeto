@@ -1270,11 +1270,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ap2\\trabalhopoobanco\\TrabalhoPooBanco.csproj",
+      "projectUniqueName": "C:\\Users\\MeuAppBanco\\TrabalhoPooBanco.csproj",
       "projectName": "TrabalhoPooBanco",
-      "projectPath": "C:\\Users\\ap2\\trabalhopoobanco\\TrabalhoPooBanco.csproj",
+      "projectPath": "C:\\Users\\MeuAppBanco\\TrabalhoPooBanco.csproj",
       "packagesPath": "C:\\Users\\nessa\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ap2\\trabalhopoobanco\\obj\\",
+      "outputPath": "C:\\Users\\MeuAppBanco\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nessa\\AppData\\Roaming\\NuGet\\NuGet.Config"
