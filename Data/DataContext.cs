@@ -67,22 +67,19 @@ namespace Data.Context
 
                 });
 
-
                 modelBuilder.Entity<Saque>()
                     .HasBaseType<Transacao>();
-
 
                 modelBuilder.Entity<Deposito>()
                     .HasBaseType<Transacao>();
 
-
                 modelBuilder.Entity<Transferencia>()
                     .HasBaseType<Transacao>();
+
                 modelBuilder.Entity<Resultado>(entity =>
                 {
                     entity.ToTable("Resultados");
                     entity.HasKey(r => r.Id);
-
 
                 });
 
