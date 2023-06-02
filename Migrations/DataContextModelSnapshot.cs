@@ -89,7 +89,7 @@ namespace TrabalhoPooBanco.Migrations
 
             modelBuilder.Entity("TrabalhoPooBanco.Domain.Entities.Transacao", b =>
                 {
-                    b.Property<int>("IdTransacao")
+                    b.Property<int>("IdTransacoes")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -100,7 +100,7 @@ namespace TrabalhoPooBanco.Migrations
                     b.Property<decimal>("Valor")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("IdTransacao");
+                    b.HasKey("IdTransacoes");
 
                     b.ToTable("Transacoes", (string)null);
 

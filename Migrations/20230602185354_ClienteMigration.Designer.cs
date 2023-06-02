@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace TrabalhoPooBanco.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230528112256_NewMigrations")]
-    partial class NewMigrations
+    [Migration("20230602185354_ClienteMigration")]
+    partial class ClienteMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -92,7 +92,7 @@ namespace TrabalhoPooBanco.Migrations
 
             modelBuilder.Entity("TrabalhoPooBanco.Domain.Entities.Transacao", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdTransacoes")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -103,7 +103,7 @@ namespace TrabalhoPooBanco.Migrations
                     b.Property<decimal>("Valor")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdTransacoes");
 
                     b.ToTable("Transacoes", (string)null);
 
@@ -130,8 +130,7 @@ namespace TrabalhoPooBanco.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("IdDeposito")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("id");
+                        .HasColumnType("INTEGER");
 
                     b.HasIndex("ClienteId");
 

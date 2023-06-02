@@ -63,7 +63,7 @@ namespace Data.Context
                 modelBuilder.Entity<Transacao>(entity =>
                 {
                     entity.ToTable("Transacoes");
-                    entity.HasKey(t => t.IdTransacao);
+                    entity.HasKey(t => t.IdTransacoes);
 
                 });
 

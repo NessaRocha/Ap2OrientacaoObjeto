@@ -6,11 +6,11 @@ public abstract class Transacao
 {
     public decimal Valor { get; protected set; }
     [Key]
-    public int  IdTransacao { get; set; }
+    public int IdTransacoes { get; set; }
 
     public Transacao(decimal valor)
     {
-       
+
     }
 
     public abstract Resultado Executar();

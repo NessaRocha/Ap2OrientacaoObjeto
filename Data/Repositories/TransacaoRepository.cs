@@ -5,7 +5,7 @@ using TrabalhoPooBanco.Domain.Interfaces;
 
 namespace TrabalhoPooBanco.Data.Repositories
 {
-   public class TransacaoRepository : ITransacaoRepository 
+    public class TransacaoRepository : ITransacaoRepository
     {
         private readonly DataContext context;
 
@@ -29,12 +29,12 @@ namespace TrabalhoPooBanco.Data.Repositories
 
         public IList<Transacao> GetAll()
         {
-            return context.Transacoes.Include(x=>x.Valor).ToList();
+            return context.Transacoes.Include(x => x.Valor).ToList();
         }
 
         public Transacao GetById(int entityId)
         {
-            return context.Transacoes.Include(x=>x.Valor).SingleOrDefault(x=>x.IdTransacao
+            return context.Transacoes.Include(x => x.Valor).SingleOrDefault(x => x.IdTransacoes
             == entityId);
         }
 
